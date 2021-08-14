@@ -2,15 +2,29 @@
 
 def insert_sort(array):
     """Сортировка списка вставками."""
-    pass
+    N = len(array)
+    for top in range(1, N):
+        k = top
+        while k > 0 and array[k-1] > array[k]:
+            array[k], array[k-1] = array[k-1], array[k]
+            k -= 1
 
 def choise_sort(array):
     """Сортировка списка выбором."""
-    pass
+    N = len(array)
+    for pos in range(0, N-1):
+        for k in range(pos+1, N):
+            if array[k] < array[pos]:
+                array[k], array[pos] = array[pos], array[k]
+
 
 def bubble_sort(array):
     """Сортировка списка методом пузырька."""
-    pass
+    N = len(array)
+    for bypass in range(1, N):
+        for k in range(0, N-bypass):
+            if array[k] > array[k+1]:
+                array[k], array[k+1] = array[k+1], array[k]
 
 
 def test_sort(sort_algorithm):
